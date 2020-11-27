@@ -44,11 +44,11 @@
 
 ### 💵Sch
 ---
-**2018** Scholarship for Tutoring, University of Seoul, Korea
-**2018** Scholarship for Studying Overseas, University of Seoul, Korea
-**2017** Scholarship from Supporting Program for University Specialization in Captial , University of Seoul, Korea
-**2017** Scholarship for Excellent Achievement, University of Seoul, Korea
-**2017** Global Leader Scholarship, University of Seoul, Korea
-**2017** Scholarship for Excellent Achievement, University of Seoul, Korea
-**2016** Scholarship for Studying Overseas, University of Seoul, Korea
+**2018** Scholarship for Tutoring, University of Seoul, Korea   
+**2018** Scholarship for Studying Overseas, University of Seoul, Korea   
+**2017** Scholarship from Supporting Program for University Specialization in Captial , University of Seoul, Korea   
+**2017** Scholarship for Excellent Achievement, University of Seoul, Korea   
+**2017** Global Leader Scholarship, University of Seoul, Korea   
+**2017** Scholarship for Excellent Achievement, University of Seoul, Korea   
+**2016** Scholarship for Studying Overseas, University of Seoul, Korea   
 
