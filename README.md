@@ -42,7 +42,7 @@
     - Final Leaderboard 11/785
 - June. 2020 ***[Dacon Bio-Optical Data Prediction](https://dacon.io/competitions/official/235608/overview/)*** ***(17/315)***
 
-### 💵Sch
+### 💵Schholarships
 ---
 **2018** Scholarship for Tutoring, University of Seoul, Korea   
 **2018** Scholarship for Studying Overseas, University of Seoul, Korea   
