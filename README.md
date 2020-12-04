@@ -38,7 +38,8 @@
 ---
 - Sept. 2020 **[*BigContest 챔피언스리그 본선진출*](https://www.bigcontest.or.kr/)** ***(16/570)***
     - Competition
-- July. 2020 ***[Kakao Melon Playlist Continuation](https://arena.kakao.com/c/7)*** ***(11/785)***
+- July. 2020 ***[Kakao Melon Playlist Continuation](https://arena.kakao.com/c/7)*** ***(11/785)***]
+    - [Project Github](https://github.com/Arena-UOS/MelonPlaylistContinuation)
     - Public Leaderboard 10/785
     - Final Leaderboard 11/785
 - June. 2020 ***[Dacon Bio-Optical Data Prediction](https://dacon.io/competitions/official/235608/overview/)*** ***(17/315)***
