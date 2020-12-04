@@ -41,6 +41,7 @@
     - [Project Github](https://github.com/KUAI-Bigcontest/team_kuai)
 - July. 2020 ***[Kakao Melon Playlist Continuation](https://arena.kakao.com/c/7)*** ***(11/785)***]
     - [Project Github](https://github.com/Arena-UOS/MelonPlaylistContinuation)
+    - [Project Notion](https://www.notion.so/Team-dddd-ab0ca582b705420b983ad3a06c6d7e11)
     - Public Leaderboard 10/785
     - Final Leaderboard 11/785
 - June. 2020 ***[Dacon Bio-Optical Data Prediction](https://dacon.io/competitions/official/235608/overview/)*** ***(17/315)***
