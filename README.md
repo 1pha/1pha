@@ -37,7 +37,7 @@
 ### 🎖️Competitions & Awards
 ---
 - Sept. 2020 **[*BigContest 챔피언스리그 본선진출*](https://www.bigcontest.or.kr/)** ***(16/570)***
-    - Competition
+    - [Project Github](https://github.com/KUAI-Bigcontest/team_kuai)
 - July. 2020 ***[Kakao Melon Playlist Continuation](https://arena.kakao.com/c/7)*** ***(11/785)***]
     - [Project Github](https://github.com/Arena-UOS/MelonPlaylistContinuation)
     - Public Leaderboard 10/785
