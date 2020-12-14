@@ -34,6 +34,8 @@
 - Aug. 2020 ~ Dec. 2020 **모두의 연구소** SBA 야간주말 빅데이터/인공지능 교육과정 퍼실리테이터
     - 모두의 연구소와 서울산업진흥원이 협력하여 재직자 대상으로 진행된 빅데이터/인공지능 교육과정 퍼실리테이터로 약 4개월 근무
     - [복습 자료 Github](https://github.com/1pha/Modulabs-Daehyun)
+- Jan. 2021 ~ Jun. 2021 **UpStage** Boostcamp AI Tech 2021, AI Project Mentor
+    - Upstage에서 준비 중인 BoostCamp AI Tech 2021의 AI 프로젝트 멘토
 
 ### 🎖️Competitions & Awards
 ---
