@@ -48,6 +48,7 @@
     - Public Leaderboard 10/785
     - Final Leaderboard 11/785
 - June. 2020 ***[Dacon Bio-Optical Data Prediction](https://dacon.io/competitions/official/235608/overview/)*** ***(17/315)***
+- Feb. 2021 ***[AI Factory 2021 구강계질환 의료영상 인공지능 경진대회 - 치아 식별 모델 구축 과제 3등 입상](http://mnc.aifactory.space/task/search.do)***
 
 ### 💵Schholarships
 ---
