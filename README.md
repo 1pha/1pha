@@ -40,7 +40,7 @@
 
 ### 🎖️Competitions & Awards
 ---
-- Feb. 2021 ***[AI Factory 2021 구강계질환 의료영상 인공지능 경진대회 - 치아 식별 모델 구축 과제 3등 입상](http://mnc.aifactory.space/task/search.do)***
+- Feb. 2021 ***[AI Factory 2021 구강계질환 의료영상 인공지능 경진대회 - 치아 식별 모델 구축 과제](http://mnc.aifactory.space/task/search.do)  3등 입상***
 - Sept. 2020 **[*BigContest 챔피언스리그 본선진출*](https://www.bigcontest.or.kr/)** ***(16/570)***
     - [Project Github](https://github.com/KUAI-Bigcontest/team_kuai)
 - July. 2020 ***[Kakao Melon Playlist Continuation](https://arena.kakao.com/c/7)*** ***(11/785)***
