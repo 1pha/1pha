@@ -9,6 +9,7 @@
 - **Language** First Language Korean, Fluent in English
 - **Email** 1phantasmas@korea.ac.kr
 - **github** [1pha](https://github.com/1pha)
+- **gists** [1pha](https://gist.github.com/1pha)
 - **notion** [oopy](https://1pha.oopy.io/)
 
 ### 🔬Research Interest
