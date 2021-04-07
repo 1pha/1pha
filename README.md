@@ -13,6 +13,8 @@
 
 ### 🔬Research Interest
 ---
+- ***Explanation Map for Convolutional Neural Nets***
+    - It's always interesting to see how and where CNNs look at the input image to do their work. I am doing research about methodology of how to extract what models see. Starting from traditional Grad-CAM, SmoothGrad and now working on SCOUTER and trying to come up with new methods.
 - ***Neuroimaging with Deep Learning***
     - Decoding Neural activations with fMRI data. Current fMRI analyzing data relies on statistical models and I anticipate that the deep learning model would be a novel approach to this. Since neuroscience, neuroimaging nourished deep learning fields in many ways, I think this would help oppositely too. Some people already took their step to this and very thankful for what they've done and trying to continue their work.
 - ***Recommendation System alongside with Natural Language Processing***
