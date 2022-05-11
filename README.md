@@ -1,5 +1,5 @@
 ![Anurag's github stats](https://github-readme-stats.vercel.app/api?username=1pha&show_icons=true&theme=radical)
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=1pha&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
+<!-- [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=1pha&layout=compact)](https://github.com/anuraghazra/github-readme-stats) -->
 # Daehyun Cho CV
 
 ### Personal Data
@@ -10,7 +10,7 @@
 - **Email** 1phantasmas@korea.ac.kr
 - **github** [1pha](https://github.com/1pha)
 - **gists** [1pha](https://gist.github.com/1pha)
-- **notion** [oopy](https://1pha.oopy.io/)
+- **notion** [oopy](https://ooog.tistory.com/)
 
 ### 🔬Research Interest
 ---
@@ -18,8 +18,7 @@
     - It's always interesting to see how and where CNNs look at the input image to do their work. I am doing research about methodology of how to extract what models see. Starting from traditional Grad-CAM, SmoothGrad and now working on SCOUTER and trying to come up with new methods.
 - ***Neuroimaging with Deep Learning***
     - Decoding Neural activations with fMRI data. Current fMRI analyzing data relies on statistical models and I anticipate that the deep learning model would be a novel approach to this. Since neuroscience, neuroimaging nourished deep learning fields in many ways, I think this would help oppositely too. Some people already took their step to this and very thankful for what they've done and trying to continue their work.
-- ***Recommendation System alongside with Natural Language Processing***
-    - Rating-based(movie, music) recommendation systems are powerful and widely used these days. But to go further, finding latent preferences of users should be accounted for in their comments since they are both explicitly and implicitly showing the preferences. Emotions beneath words and emojis carry lots of information and I'm interested in using this information in the recommendation system. Traditional models of NLP don't catch the paragraphs' context but transformers are showing its possibilities to break that limits.
+
 - ***Neuroscience***
     - Interested in finding the basis of emotions and personality. Theories such as Big5 or MBTIs can well explain personality but it is biased with a self-prediction error. Trying to come up with emotional models like two-dimensional models of emotions — valence and arousals — which is quite explainable and mapping them into mathematics makes sense to me. Also finding their neural substrates would be an awesome job.
 
@@ -34,8 +33,8 @@
 
 ### 📎Works
 ---
-- Jan. 2021 ~ Dec. 2021 **UpStage** Boostcamp AI Tech 2021, AI Project Mentor
-    - [BoostCamp AI Tech](https://boostcamp.connect.or.kr/) 2021 AI Tech 1기 & 2기 프로젝트 멘토
+- Jan. 2021 ~ May. 2022 **UpStage** Boostcamp AI Tech 2021, 2022, AI Project Mentor
+    - [BoostCamp AI Tech](https://boostcamp.connect.or.kr/) AI Tech 1, 2, 3기 프로젝트 멘토
 - Aug. 2020 ~ Dec. 2020 **모두의 연구소** SBA 야간주말 빅데이터/인공지능 교육과정 퍼실리테이터
     - 모두의 연구소와 서울산업진흥원이 협력하여 재직자 대상으로 진행된 빅데이터/인공지능 교육과정 퍼실리테이터로 약 4개월 근무
     - [복습 자료 Github](https://github.com/1pha/Modulabs-Daehyun)
