@@ -1,0 +1,1038 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
+    
+    
+      
+        <title>Brief History of Diffusion-based Generative models and their variants - Codehacks for Deep Learning Servers</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.c4a75a56.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#brief-history-of-diffusion-based-generative-models-and-their-variants" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Codehacks for Deep Learning Servers" class="md-header__button md-logo" aria-label="Codehacks for Deep Learning Servers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Codehacks for Deep Learning Servers
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Brief History of Diffusion-based Generative models and their variants
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../01_python/0_index/" class="md-tabs__link">
+        Python
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../02_linux/1_zsh/" class="md-tabs__link">
+        Linux
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link">
+        Deep Learning
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../homeworks/" class="md-tabs__link">
+        #TODOs
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Codehacks for Deep Learning Servers" class="md-nav__button md-logo" aria-label="Codehacks for Deep Learning Servers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Codehacks for Deep Learning Servers
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../01_python/0_index/" class="md-nav__link">
+        Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../01_python/1_conda/" class="md-nav__link">
+        conda
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          Troubleshoots
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Troubleshoots
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../01_python/troubleshoots/0_index/" class="md-nav__link">
+        Main
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Linux
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02_linux/1_zsh/" class="md-nav__link">
+        zsh
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02_linux/2_ssh/" class="md-nav__link">
+        ssh
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+          Commands
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Commands
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02_linux/02_03_commands/1_watch/" class="md-nav__link">
+        watch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02_linux/02_03_commands/2_tmux/" class="md-nav__link">
+        tmux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02_linux/02_03_commands/3_rsync/" class="md-nav__link">
+        rsync
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02_linux/02_03_commands/4_storage/" class="md-nav__link">
+        storage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02_linux/02_03_commands/5_mount/" class="md-nav__link">
+        mount
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02_linux/02_03_commands/6_files/" class="md-nav__link">
+        files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02_linux/02_03_commands/7_users/" class="md-nav__link">
+        users
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02_linux/02_03_commands/8_zip/" class="md-nav__link">
+        zip & tar
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02_linux/3_gpu/" class="md-nav__link">
+        GPU
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02_linux/4_github/" class="md-nav__link">
+        github
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Deep Learning
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Deep Learning
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Main
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          #TODOs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          #TODOs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../homeworks/" class="md-nav__link">
+        Main
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../homeworks/grafana/" class="md-nav__link">
+        grafana
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="brief-history-of-diffusion-based-generative-models-and-their-variants">Brief History of Diffusion-based Generative models and their variants</h1>
+<ul>
+<li><strong>BigGAN</strong>: 2019. 2 (ICLR 2019) | DeepMind</li>
+<li><strong>Generative Modeling by Estimating Gradients of the Data Distribution</strong>: 2019. 7 | Stanford</li>
+<li>📌 <strong>DDPM</strong>: 2020. 12 | Google Research</li>
+<li><strong>DDIM</strong>: 2020. 10 | Stanford<ul>
+<li>기존 DDPM이 Noising process가 Markovian이라 바로 이전의 timestep noised image에만 의존하여 전체 프로세스를 만들어내는데 시간이 많이 걸린다. 여기서 Non-markovian으로 $x_0$에서 $x_T$로 가는 과정을 deterministic하게 forward process를 일부만 sampling하여 train하고 추론할 때도 마찬가지로 전체 step을 다 거치지 않아 accelerated inference가 가능하다.</li>
+</ul>
+</li>
+<li><strong>Score-based Generative Modeling through Stochastic Differential Equations</strong>: 2020. 11 | Google Research</li>
+<li>
+<p><strong>VQGAN</strong>: 2020. 12 (CVPR 2021) | CompVis</p>
+<ul>
+<li>ConvNet과 Transformer가 generation task에서 각각 잘하는 부분을 다 사용해서 image tokenization을 진행<ul>
+<li>ConvNet은 inductive bias로 인해 local 정보를 많이 가지고 있다. 하지만 global 정보를 가지고 있지 않다.</li>
+<li>Transformer model은 low inductive bias 덕분에 expressive하다 (워딩 때문에 혼란스러운데 아마 global information을 보유한다 정도로 이해하면 되지 않을까 싶다). 하지만 고화질의 이미지를 만들기는 어렵다.</li>
+</ul>
+</li>
+<li>ConvNet으로 image feature map을 만든 후 이를 quantize하여 latent image code를 만든다. 또한 이 code를 decoder에 태워 GAN 구조로 학습을 시킨다.</li>
+<li>그 후 image를 tokenize하여 sequence로 보유한 후 이를 language model처럼 학습시킨다 (Auto-regressive하게 next token prediction 가까움)</li>
+<li>Auto-regressive한 특성을 활용하여 conditioning을 할 수 있다: 시작점에 conditioning information을 prepend해서 추론</li>
+</ul>
+</li>
+<li>
+<p><strong>Improved DDPM</strong>: 2021. 2 | OpenAI</p>
+</li>
+<li><strong>DallE</strong>: 2021. 2 | OpenAI<ul>
+<li>Discrete variational autoencoder (DVAE)로 이미지를 $32^2$ grid로 만들어줌. 이 때 codebook은 총 8192개의 고유 token이 있음. 이를 256 BPE-encoded text token으로 text query를 toeknize하고 방금 만든 $32^2$ 이미지의 image token들과 concatenate, autregressive하게 학습</li>
+<li>얘도 Likelihood $\ln p_{\theta,\psi}(x, y)$를 학습하는 것으로 Lower bound를 학습한다.</li>
+</ul>
+</li>
+<li>📌 <strong>CLIP</strong>: 2021. 3 | OpenAI<ul>
+<li>Generative modeling이라기 보다는 Image-text pair 학습 방법론으로 이렇게 학습된 encoder들을 활용한다.</li>
+</ul>
+</li>
+<li><strong>SR3</strong>: 2021. 4 | Google Research</li>
+<li>
+<p>📌 <strong>Guided Diffusion (Classifier Guidance, ADM: Ablated Diffusion Model)</strong> 2021. 5 | OpenAI</p>
+<ul>
+<li>Pre-trained classifier의 gradient를 condition으로 활용하는 방법 제시</li>
+<li>그 밖에도 모델 구조 개선에 대한 고찰 진행<ul>
+<li>Increased depth: 성능은 높이지만 시간이 너무 오래 걸림 → discard</li>
+</ul>
+</li>
+<li>사실 GAN에서 Classifier guidance와 비슷한 효과를 주는 것은 truncation, temperature scaling이다. 같은 걸 diffusion에도 적용해보았으나 잘되지 않았다: blurry/smooth images, low precision &amp; recall<ul>
+<li>sampling할 때 temperature만큼 mean은 scaling, deviation은 나눠주기</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Cascaded Diffusion</strong> 2021. 6 | Google Research</p>
+</li>
+<li><strong>ImageBART</strong>: 2021. 8 (NIPS 2021) | CompVis</li>
+<li><strong>LSGM</strong>: 2021. 10</li>
+<li>
+<p><strong>GLIDE</strong>: 2021. 12 | OpenAI</p>
+</li>
+<li>
+<p>📌 <strong>Classifier Free Guidance</strong>: 2021 NeurIPS workshop | Google Research</p>
+</li>
+<li>
+<p><strong>DallE 2(unCLIP)</strong>: 2022. 4 | OpenAI</p>
+<ul>
+<li>CLIP Objective를 통해 주어진 text query &amp; image query에 맞춰서 image / text encoder를 학습하고, generation process에서는 CLIP Text embedding을 통해 prior를 만들어준 후 diffusion decoder에 넣어주는 형태로 generation을 진행한다.</li>
+</ul>
+</li>
+<li>
+<p>📌 <strong>Latent Diffusion (LDM, or a.k.a. Stable Diffusion)</strong> 2022.4 | CompVis</p>
+<ul>
+<li>Pixel space에서 바로 예측하면 시간이 너무 오래 걸리기 때문에 latent space에서 예측할 수 있도록 연구. 확실히 시간적인 측면에서 단축이 많이 이뤄졌음.</li>
+<li>Latent representation에 DM을 거는 것에 대한 고찰을 했음<ul>
+<li>기본적으로 Generative modeling은 perceptual / semantic한 요소를 차례로 학습하는데, latent representation는 high-frequency detail을 없애면서 이를 학습(?) 이게 정확히 뭐지</li>
+</ul>
+</li>
+<li>Super resolution, Inpainting task</li>
+</ul>
+</li>
+<li>
+<p><strong>Imagen</strong>: 2022. 5 | Google Research</p>
+<ul>
+<li>LM의 역할이 매우 중요했다! Frozen Pre-trained LLM으로 튜닝한 첫 사례로 봐야할듯</li>
+<li>Classifier guidance의 weight를 dynamic thresholding을 적용<ul>
+<li>Noise prediction한 이미지의 absolute value로부터 percentile을 구해서 그 값을 활용: 이게 어떻게 유의미한지 잘모르겠다.</li>
+</ul>
+</li>
+<li>Efficient U-Net 구조: 제일 큰 건 self-attention이 사라진 것 같다.</li>
+<li>DrawBench Dataset 공개</li>
+</ul>
+</li>
+<li>
+<p><strong>Parti</strong>: 2022. 6 | Google Research</p>
+</li>
+<li><strong>Elucidating the Design space of Diffusions</strong>: 2022. 10 | NVIDIA</li>
+<li><strong>Variational Diffusion Models</strong>: 2022. 12 | Google Research</li>
+<li>
+<p><strong>MUSE</strong>: 2023. 1 | Google Research</p>
+<ul>
+<li>VQGAN의 discrete token으로 조금 더 efficient하게 뽑아낼 수 있다.</li>
+<li>Parallel decoding 또한 활용했다는데 코드가 없어서 잘 모르겠다. DETR 말고는 내가 아는 사례가 없어서 알기가 어렵다.</li>
+</ul>
+</li>
+<li>
+<p><strong>Consistency Models</strong>: 2023. 3 | OpenAI</p>
+</li>
+</ul>
+<h1 id="generative-metrics-loss">Generative Metrics &amp; Loss</h1>
+<h2 id="metrics">Metrics</h2>
+<p>| <strong>Inception Score (IS)</strong> was proposed by Salimans et al. [54], and it measures how well a model captures the full ImageNet class distribution while still producing individual samples that are convincing examples of a single class. One drawback of this metric is that it does not reward covering the whole distribution or capturing diversity within a class, and models which memorize a small subset of the full dataset will still have high IS [3].</p>
+<p>| To better capture diversity than IS, <strong>Fréchet Inception Distance (FID)</strong> was propose judgement than Inception Score. FID provides a symmetric measure of the distance between two image distributions in the Inception-V3 [62] latent space. Recently, sFID was proposed by Nash et al. [42] as a version of FID that uses spatial features rather than the standard pooled features. They find that this metric better captures spatial relationships, rewarding image distributions with coherent high-level structure</p>
+<p>| Finally, Kynkäänniemi et al. [32] proposed <strong>Improved Precision and Recall metrics</strong> to separately measure sample fidelity as the fraction of model samples which fall into the <em>data manifold</em> (precision), and diversity as the fraction of data samples which fall into the sample manifold (recall).
+* Inception Score (IS)
+* Precision and Recall Metric | 2019. 4 | NVIDIA
+* Frechet Inception Distance (FID)
+* CLIP Score</p>
+<h2 id="loss">Loss</h2>
+<ul>
+<li>Perceptual Loss</li>
+</ul>
+<h1 id="research-groups">Research Groups</h1>
+<ul>
+<li>
+<p>CompVis Group</p>
+<ul>
+<li>Computer Vision and Learning research group at Ludwig Maximilian University of Munich (formerly Computer Vision Group at Heidelberg University)</li>
+<li>Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patric Esser, Bjorn Ommer</li>
+</ul>
+</li>
+<li>
+<p>Google Research</p>
+<ul>
+<li>Jonathan Ho</li>
+<li>Tim Salimans</li>
+<li>Christian Saharia</li>
+<li>Ben Poole</li>
+<li>Diederiek P. Kingma</li>
+<li>Jarred Barber</li>
+<li>Yang Song</li>
+<li>Abhishek Kumar</li>
+<li>Jascha Sohl-Dickstein</li>
+<li>Diederik P. Kingma</li>
+</ul>
+</li>
+<li>
+<p>OpenAI</p>
+<ul>
+<li>Prafulla Dhariwal</li>
+<li>Radford Alec</li>
+<li>Jong Wook Kim</li>
+<li>Chris Hallacy</li>
+<li>Gabriel Goh</li>
+<li>Aditya Ramesh</li>
+<li>Alex Nichol</li>
+</ul>
+</li>
+<li>
+<p>NVIDIA</p>
+<ul>
+<li>Karras Tero</li>
+<li>Miika Aittala</li>
+<li>Timo Aila</li>
+<li>Samuli Laine</li>
+</ul>
+</li>
+<li>
+<p>Stanford</p>
+<ul>
+<li>Jiaming Song</li>
+<li>Chenlin Meng</li>
+<li>Stefano Ermon</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.efa0ade1.min.js"></script>
+      
+    
+  </body>
+</html>
