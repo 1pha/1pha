@@ -9,17 +9,13 @@
       
       
       
-        <link rel="prev" href="../4_storage/">
-      
-      
-        <link rel="next" href="../6_files/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
     
     
       
-        <title>mount - Codehacks for Deep Learning Servers</title>
+        <title>How to check Resource Metrics - Codehacks for Deep Learning Servers</title>
       
     
     
@@ -71,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mounting-external-disk" class="md-skip">
+        <a href="#how-to-check-resource-metrics" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              mount
+              How to check Resource Metrics
             
           </span>
         </div>
@@ -214,15 +210,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../1_zsh/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../1_zsh/" class="md-tabs__link">
         Linux
       </a>
     </li>
@@ -435,16 +429,16 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
       
       
       
@@ -453,7 +447,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Linux
@@ -492,16 +486,16 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
       
       
       
@@ -510,7 +504,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3_3">
           <span class="md-nav__icon md-icon"></span>
           Commands
@@ -577,48 +571,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          mount
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../5_mount/" class="md-nav__link">
         mount
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#mounting-external-disk" class="md-nav__link">
-    Mounting External disk
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -840,6 +797,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -848,8 +807,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#mounting-external-disk" class="md-nav__link">
-    Mounting External disk
+  <a href="#ram" class="md-nav__link">
+    RAM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring" class="md-nav__link">
+    Monitoring
   </a>
   
 </li>
@@ -869,46 +835,15 @@
                   
 
 
-  <h1>mount</h1>
-
-<h2 id="mounting-external-disk">Mounting External disk</h2>
-<div class="language-bash highlight"><span class="filename">Mounting external disk</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>fdisk<span class="w"> </span>-l
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sudo<span class="w"> </span>mkfs.ext4<span class="w"> </span>/dev/sda<span class="w"> </span><span class="c1"># (1)</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>sudo<span class="w"> </span>mkdir<span class="w"> </span>/mnt/hdd
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>sudo<span class="w"> </span>mount<span class="w"> </span>/dev/sda<span class="w"> </span>/mnt/hdd
+<h1 id="how-to-check-resource-metrics">How to check Resource Metrics</h1>
+<h2 id="ram">RAM</h2>
+<div class="language-zsh highlight"><span class="filename">Checking RAM</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>free<span class="w"> </span>-mh
 </span></code></pre></div>
-<ol>
-<li>Please check your disk name: <code>dev/sda</code>. This command formats hard disk.</li>
-</ol>
-<div class="admonition question">
-<p class="admonition-title">What is <code>ext4</code>?</p>
-<p>The <code>mkfs</code> command is used in Linux and Unix operating systems to create a file system on a storage device. The <code>-t</code> option specifies the type of file system to be created. <code>ext2</code>, <code>ext3</code>, and <code>ext4</code> are all different versions of the Linux file system. <br />
-- <code>ext2</code> is the second extended file system and was the default file system for Linux for many years. It does not support journaling, which means that it can take longer to recover data after a crash or power failure. <br />
-- <code>ext3</code> is an extension of the <code>ext2</code> file system and includes journaling. Journaling helps to reduce the time it takes to recover data after a crash or power failure. It is backward-compatible with <code>ext2</code>, which means that you can mount an <code>ext2</code> file system as an <code>ext3</code> file system. <br />
-- <code>ext4</code> is the fourth extended file system and includes improvements over <code>ext3</code>. It has faster file system checks and supports larger file systems and files. It also includes a number of other features, such as delayed allocation and multiblock allocation, which improve performance and reduce fragmentation. <br />
-When using the <code>mkfs</code> command with the <code>-t</code> option, you should specify the appropriate file system type for your needs. For example, if you are creating a file system on a large storage device with large files, <code>ext4</code> may be a good choice.</p>
-</div>
-<p>부팅 시 자동으로 적용되게 하려면 <code>/etc/fstab</code>에 넣어줘야한다. 넣어줄 때는 아래의 구성요소들을 갖춰야한다.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>UUID=&lt;UUID&gt; &lt;mount_point&gt; &lt;file_system_type&gt; defaults 0 2
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a># e.g.
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>UUID=6D2B-0058 /mnt/my_external_drive ext4 defaults 0 2
+<h2 id="monitoring">Monitoring</h2>
+<p><div class="language-zsh highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>top
+</span></code></pre></div>
+<div class="language-zsh highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>htop
 </span></code></pre></div></p>
-<ol>
-<li><strong>How to check <code>&lt;UUID&gt;</code>?</strong>: <code>sudo blkid</code> and check file systems UUID</li>
-<li><strong>What is <code>&lt;mount point&gt;</code>?</strong>: Mount point is the directory that you have mounted with <code>mount</code> command</li>
-<li><strong>What is <code>&lt;file_system_type&gt;</code>?</strong>: </li>
-<li><strong>What are <code>defaults 0 2</code>?</strong>: The defaults option specifies the default mount options, and the 0 2 at the end specifies the dump and file system check options. You can leave these as they are for most cases.</li>
-</ol>
-<div class="admonition question">
-<p class="admonition-title">What is <code>0 2</code> and <code>0 0</code>?</p>
-<p>In the /etc/fstab file, the 0 2 and 0 0 at the end of each line specify the dump and file system check options for the corresponding file system. <br />
-The first number (dump) specifies whether or not the file system should be backed up using the dump command. A value of 0 means that the file system should not be backed up, while a value of 1 means that it should. <br />
-The second number (file system check) specifies the order in which the file system check should be performed at boot time. A value of 0 means that the file system should not be checked, while a value of 1 means that it should be checked first. The value 2 means that it should be checked after all file systems with a value of 1 have been checked. <br />
-In general, the dump option is not used anymore and is usually set to 0. The file system check option is more important, as it determines the order in which file systems are checked for errors during the boot process. <br />
-In your case, if a file system in your /etc/fstab file has 0 0 instead of 0 2, it means that the file system will not be checked for errors during the boot process. This might be appropriate for some types of file systems that are known to be very stable and reliable, such as read-only file systems or file systems on removable media. <br />
-However, it's generally a good idea to have all file systems checked for errors during the boot process. If you want to change the file system check option for a particular file system in /etc/fstab, you can edit the corresponding line and change the 0 0 to 0 2.</p>
-</div>
 
 
 
