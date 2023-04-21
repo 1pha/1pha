@@ -1,0 +1,75 @@
+site_name: Codehacks for Deep Learning Servers
+nav:
+  - Home: ./index.md
+  - Python:
+    - Python: 01_python/0_index.md
+    - conda: 01_python/1_conda.md
+    - Troubleshoots:
+      - Main: 01_python/troubleshoots/0_index.md
+    
+  - Linux:
+    - zsh: 02_linux/1_zsh.md
+    - ssh: 02_linux/2_ssh.md
+    - Commands: # 02_linux/3_commands.md
+      - watch: 02_linux/02_03_commands/1_watch.md
+      - tmux: 02_linux/02_03_commands/2_tmux.md
+      - rsync: 02_linux/02_03_commands/3_rsync.md
+      - storage: 02_linux/02_03_commands/4_storage.md
+      - mount: 02_linux/02_03_commands/5_mount.md
+      - files: 02_linux/02_03_commands/6_files.md
+      - users: 02_linux/02_03_commands/7_users.md
+      - 'zip & tar': 02_linux/02_03_commands/8_zip.md
+    - GPU: 02_linux/3_gpu.md
+    - github: 02_linux/4_github.md
+  
+  - 'Deep Learning':
+    - Main: 03_dl/index.md
+
+  - "#TODOs":
+    - Main: homeworks/index.md
+    - grafana: homeworks/grafana/index.md
+
+theme:
+  name: material
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
