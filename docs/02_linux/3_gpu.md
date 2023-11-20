@@ -40,3 +40,12 @@ Fix with following command
 sudo apt install --fix-broken
 ```
 [Reference](https://forums.developer.nvidia.com/t/nvidia-smi-has-failed-because-it-couldnt-communicate-with-the-nvidia-driver-make-sure-that-the-latest-nvidia-driver-is-installed-and-running/197141/4)
+
+## Power Limit
+
+Power limit is to restrict maximum power of server.
+```bash
+sudo nvidia-smi -i 0 -pl 330
+```
+
+Currently, for 245 server we set down power limit from 390W to 330W.
