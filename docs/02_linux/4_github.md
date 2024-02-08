@@ -23,3 +23,19 @@ gh auth login
 !!! question "What is `gpg keys`?"
     GitHub no longer allows you to type in passwords on CLI, which means no one can clone/pull/commit anything on cli through passwords. Instead, everybody uses **Personal access tokens**. Lookup [here](https://docs.github.com/ko/enterprise-server@3.5/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) for more details
 
+
+# Repositories with Submodules
+
+### Cloning repos with submodules
+```shell
+git submodule update --init --recursive
+```
+
+### Removing submodules
+```shell
+git submodule deinit -f (REPO)
+rm -rf .git/modules/(REPO)
+git rm -f (REPO)
+```
+
+

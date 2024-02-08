@@ -38,6 +38,7 @@ NVIDIA-SMI has failed because it couldn't communicate with the NVIDIA driver. Ma
 Fix with following command
 ```bash
 sudo apt install --fix-broken
+sudo reboot
 ```
 [Reference](https://forums.developer.nvidia.com/t/nvidia-smi-has-failed-because-it-couldnt-communicate-with-the-nvidia-driver-make-sure-that-the-latest-nvidia-driver-is-installed-and-running/197141/4)
 
